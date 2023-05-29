@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="estados">
   <ion-grid>
     <ion-row>
       <ion-col><img src="../../assets/images/nubes.png" alt="" width="100px"></ion-col>
@@ -27,7 +27,7 @@
           <ion-col><img src="../../assets/images/paredIZD.png" alt=""></ion-col>
           <ion-col><img src="../../assets/images/cuarto.png" alt=""></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt=""></ion-col>
-          <ion-col><img src="../../assets/images/baño.png" alt=""></ion-col>
+          <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_1}"></ion-col>
           <ion-col><img src="../../assets/images/sala.png" alt=""></ion-col>
           <ion-col><img src="../../assets/images/paredDERD.png" alt=""></ion-col>
         </ion-row>

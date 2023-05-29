@@ -22,13 +22,13 @@ export class AppComponent implements OnInit {
   appPages = [
     {
       title: 'Casa Inteligente',
-      url: '/app/online-payments',
-      icon: 'calendar'
+      url: '/online-payments',
+      icon: 'home'
     },
     {
       title: 'Panel Administraitivo',
-      url: '/app/login',
-      icon: 'calendar'
+      url: '/login',
+      icon: 'settings'
     }
   ];
   loggedIn = false;
