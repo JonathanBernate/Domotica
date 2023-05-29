@@ -12,7 +12,7 @@
     <ion-row>
       <ion-col><img src="../../assets/images/nubes.png" alt="" width="100px"></ion-col>
       <ion-col>
-        <div class="sol">
+        <div class="sol" [ngClass]="{'noche': !estados.dia}">
 
         </div>
       </ion-col>
@@ -28,7 +28,7 @@
           <ion-col><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_2}"></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt="" [ngClass]="{'apagadoClase': !estados.cocina_2}"></ion-col>
           <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_2}"></ion-col>
-          <ion-col><img src="../../assets/images/sala.png" alt=""></ion-col>
+          <ion-col><img src="../../assets/images/sala.png" alt="" [ngClass]="{'apagadoClase': !estados.sala}"></ion-col>
           <ion-col><img src="../../assets/images/paredDERD.png" alt=""></ion-col>
         </ion-row>
         <ion-row>
@@ -36,7 +36,7 @@
           <ion-col><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_1}"></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt="" [ngClass]="{'apagadoClase': !estados.cocina_1}"></ion-col>
           <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_1}"></ion-col>
-          <ion-col><img src="../../assets/images/garage.png" alt=""></ion-col>
+          <ion-col><img src="../../assets/images/garage.png" alt="" [ngClass]="{'apagadoClase': !estados.luz_garaje}"></ion-col>
           <ion-col><img src="../../assets/images/paredDER.png" alt=""></ion-col>
         </ion-row>
    

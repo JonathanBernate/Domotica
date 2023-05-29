@@ -20,28 +20,28 @@ import { DomoticaService } from '../../services/domotica.service';
 export class LoginPage {
 
 
- estados:any;
+  estados: any;
 
   constructor(
     public domoticaService: DomoticaService
   ) { }
 
   ngOnInit() {
-     this.getToggle(); 
+    this.getToggle();
   }
 
-   getToggle(){
-    this.domoticaService.consultarDomotica().subscribe(data=>{
+  getToggle() {
+    this.domoticaService.consultarDomotica().subscribe(data => {
       console.log(data)
-      this.estados=data[0];
+      this.estados = data[0];
     })
   }
 
-  changeStatus(){
-    this.domoticaService.actualizarDomotica(this.estados.id, this.estados).then(data=>{
+  changeStatus() {
+    this.domoticaService.actualizarDomotica(this.estados.id, this.estados).then(data => {
       this.getToggle();
     })
-    
-  } 
-  
+
+  }
+
 }
