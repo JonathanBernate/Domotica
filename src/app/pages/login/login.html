@@ -9,34 +9,54 @@
 
 <ion-content>
       <ion-list *ngIf="estados">
-        <h1>Panel Principal</h1>
+
+        <h1>Panel De Control Primer Piso</h1>
         <ion-item>
-          <h2>Baño primer piso</h2>
-          <ion-toggle [(ngModel)]=estados.bano_1   (ngModelChange)="changeStatus()"></ion-toggle>
-        </ion-item>
-        <ion-item>
-          <h2>Baño segundo piso</h2>
-          <ion-toggle [(ngModel)]=estados.bano_2   (ngModelChange)="changeStatus()"></ion-toggle>
-        </ion-item>
-        <ion-item>
-          <h2>Cocina primer piso</h2>
-          <ion-toggle [(ngModel)]=estados.cocina_1   (ngModelChange)="changeStatus()"></ion-toggle>
-        </ion-item>
-        <ion-item>
-          <h2>Cocina segundo piso</h2>
-          <ion-toggle [(ngModel)]=estados.cocina_2   (ngModelChange)="changeStatus()"></ion-toggle>
-        </ion-item>
-        <ion-item>
-          <h2>Cuarto primer piso</h2>
+          <h2>Luces cuarto primer piso</h2>
           <ion-toggle [(ngModel)]=estados.cuarto_1   (ngModelChange)="changeStatus()"></ion-toggle>
         </ion-item>
         <ion-item>
-          <h2>Cuarto segundo piso</h2>
+          <h2>Luces cocina primer piso</h2>
+          <ion-toggle [(ngModel)]=estados.cocina_1   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <h2>Luces baño primer piso</h2>
+          <ion-toggle [(ngModel)]=estados.bano_1   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <h2>Luces garaje principal</h2>
+          <ion-toggle [(ngModel)]=estados.garaje   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <h1>Panel De Control Segundo Piso</h1>
+        <ion-item>
+          <h2>Luces baño segundo piso</h2>
+          <ion-toggle [(ngModel)]=estados.bano_2   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <h2>Luces cocina segundo piso</h2>
+          <ion-toggle [(ngModel)]=estados.cocina_2   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <h2>Luces cuarto segundo piso</h2>
           <ion-toggle [(ngModel)]=estados.cuarto_2   (ngModelChange)="changeStatus()"></ion-toggle>
         </ion-item>
         <ion-item>
-          <h2>Graje principal</h2>
+          <h2>Luces sala principal</h2>
           <ion-toggle [(ngModel)]=estados.garaje   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+
+        <h1>Panel De Control General</h1>
+        <ion-item>
+          <h2>Día</h2>
+          <ion-toggle [(ngModel)]=estados.cocina_2   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <h2>Garaje Cerrado</h2>
+          <ion-toggle [(ngModel)]=estados.cuarto_1   (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <h2>Televisor Apagados</h2>
+          <ion-toggle [(ngModel)]=estados.cuarto_2   (ngModelChange)="changeStatus()"></ion-toggle>
         </ion-item>
       </ion-list>
 
