@@ -25,19 +25,21 @@
       <ion-col><img src="../../assets/images/techoDos.png" alt="" width=900px></ion-col>
         <ion-row>
           <ion-col><img src="../../assets/images/paredIZD.png" alt=""></ion-col>
-          <ion-col><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_2}"></ion-col>
+          <ion-col *ngIf='!estados.televisor'><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_2}"></ion-col>
+          <ion-col *ngIf='estados.televisor'><img src="../../../assets/images/tv.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_2}"></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt="" [ngClass]="{'apagadoClase': !estados.cocina_2}"></ion-col>
           <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_2}"></ion-col>
           <ion-col><img src="../../assets/images/sala.png" alt="" [ngClass]="{'apagadoClase': !estados.sala}"></ion-col>
           <ion-col><img src="../../assets/images/paredDERD.png" alt=""></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col><img src="../../assets/images/paredIZ.png" alt=""></ion-col>
+          <ion-col><img *ngIf='estados.dia' src="../../assets/images/paredIZ.png" alt=""><img *ngIf='!estados.dia' src="../../../assets/images/paredIZ - Copy.png" alt=""></ion-col>
           <ion-col><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_1}"></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt="" [ngClass]="{'apagadoClase': !estados.cocina_1}"></ion-col>
           <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_1}"></ion-col>
-          <ion-col><img src="../../assets/images/garage.png" alt="" [ngClass]="{'apagadoClase': !estados.luz_garaje}"></ion-col>
-          <ion-col><img src="../../assets/images/paredDER.png" alt=""></ion-col>
+          <ion-col *ngIf='!estados.garaje'><img src="../../assets/images/garage.png" alt="" [ngClass]="{'apagadoClase': !estados.luz_garaje}"></ion-col>
+          <ion-col *ngIf='estados.garaje'><img src="../../../assets/images/open_garaje.png" alt="" ></ion-col>
+          <ion-col><img *ngIf='estados.dia' src="../../assets/images/paredDER.png" alt=""><img *ngIf='!estados.dia' src="../../../assets/images/paredDER - Copy.png" alt=""></ion-col>
         </ion-row>
    
     <ion-col class="pasto">
