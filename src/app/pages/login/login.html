@@ -27,6 +27,10 @@
           <h2>Luces garaje principal</h2>
           <ion-toggle [(ngModel)]=estados.luz_garaje   (ngModelChange)="changeStatus()"></ion-toggle>
         </ion-item>
+        <ion-item>
+          <h2>Televisor primer piso</h2>
+          <ion-toggle [(ngModel)]=estados.televisor_2 (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
 
         <h1>Panel De Control Segundo Piso</h1>
         <ion-item>
@@ -45,6 +49,10 @@
           <h2>Luces sala principal</h2>
           <ion-toggle [(ngModel)]=estados.sala   (ngModelChange)="changeStatus()"></ion-toggle>
         </ion-item>
+        <ion-item>
+          <h2>Televisor segundo piso</h2>
+          <ion-toggle [(ngModel)]=estados.televisor (ngModelChange)="changeStatus()"></ion-toggle>
+        </ion-item>
 
         <h1>Panel De Control General</h1>
         <ion-item>
@@ -56,12 +64,8 @@
           <ion-toggle [(ngModel)]=estados.garaje   (ngModelChange)="changeStatus()"></ion-toggle>
         </ion-item>
         <ion-item>
-          <h2>Televisor Apagado</h2>
-          <ion-toggle [(ngModel)]=estados.televisor (ngModelChange)="changeStatus()"></ion-toggle>
-        </ion-item>
-        <ion-item>
           <h2>Temperatura</h2>
-          <ion-input type="number" slot='end' placeholder="00"></ion-input>
+          <ion-input type="number" slot='end' placeholder="00" [(ngModel)]=temperatura (ngModelChange)="changeStatus(temperatura)"></ion-input>
         </ion-item>
     
       </ion-list>

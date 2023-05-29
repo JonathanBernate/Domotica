@@ -29,12 +29,14 @@
           <ion-col *ngIf='estados.televisor'><img src="../../../assets/images/tv.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_2}"></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt="" [ngClass]="{'apagadoClase': !estados.cocina_2}"></ion-col>
           <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_2}"></ion-col>
-          <ion-col><img src="../../assets/images/sala.png" alt="" [ngClass]="{'apagadoClase': !estados.sala}"></ion-col>
+          <ion-col *ngIf='!estados.ventilador'><img src="../../assets/images/sala.png" alt="" [ngClass]="{'apagadoClase': !estados.sala}"></ion-col>
+          <ion-col *ngIf='estados.ventilador'><img src="../../../assets/images/ventilador.gif" alt="" [ngClass]="{'apagadoClase': !estados.sala}"></ion-col>
           <ion-col><img src="../../assets/images/paredDERD.png" alt=""></ion-col>
         </ion-row>
         <ion-row>
           <ion-col><img *ngIf='estados.dia' src="../../assets/images/paredIZ.png" alt=""><img *ngIf='!estados.dia' src="../../../assets/images/paredIZ - Copy.png" alt=""></ion-col>
-          <ion-col><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_1}"></ion-col>
+          <ion-col *ngIf='!estados.televisor_2'><img src="../../assets/images/cuarto.png" alt="" [ngClass]="{'apagadoClase': !estados.cuarto_1}"></ion-col>
+          <ion-col *ngIf='estados.televisor_2'><img src="../../../assets/images/tv.png" alt=""></ion-col>
           <ion-col><img src="../../assets/images/cocina.png" alt="" [ngClass]="{'apagadoClase': !estados.cocina_1}"></ion-col>
           <ion-col><img src="../../assets/images/baño.png" alt="" [ngClass]="{'apagadoClase': !estados.bano_1}"></ion-col>
           <ion-col *ngIf='!estados.garaje'><img src="../../assets/images/garage.png" alt="" [ngClass]="{'apagadoClase': !estados.luz_garaje}"></ion-col>

@@ -39,6 +39,6 @@ export class DomoticaService {
 
   actualizarDomotica(id_doc, estados) {
     const ref = doc(this.firestore, `domotica/${id_doc}`);
-    return updateDoc(ref, { bano_1: estados.bano_1, bano_2: estados.bano_2, cocina_1: estados.cocina_1, cocina_2: estados.cocina_2, cuarto_1: estados.cuarto_1, cuarto_2: estados.cuarto_2, garaje: estados.garaje, dia: estados.dia, luz_garaje: estados.luz_garaje, sala: estados.sala, televisor: estados.televisor })
+    return updateDoc(ref, { bano_1: estados.bano_1, bano_2: estados.bano_2, cocina_1: estados.cocina_1, cocina_2: estados.cocina_2, cuarto_1: estados.cuarto_1, cuarto_2: estados.cuarto_2, garaje: estados.garaje, dia: estados.dia, luz_garaje: estados.luz_garaje, sala: estados.sala, televisor: estados.televisor, televisor_2: estados.televisor_2, ventilador: estados.ventilador })
   }
 }

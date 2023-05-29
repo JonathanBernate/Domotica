@@ -19,7 +19,7 @@ import { DomoticaService } from '../../services/domotica.service';
 })
 export class LoginPage {
 
-
+  temperatura:number
   estados: any;
 
   constructor(
@@ -37,11 +37,13 @@ export class LoginPage {
     })
   }
 
-  changeStatus() {
+  changeStatus(temp: number) {
+    if(temp>25){
+      this.estados.ventilador=true
+    } else{this.estados.ventilador=false}
     this.domoticaService.actualizarDomotica(this.estados.id, this.estados).then(data => {
       this.getToggle();
     })
-
   }
 
 }
