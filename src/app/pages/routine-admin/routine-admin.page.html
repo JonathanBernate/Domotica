@@ -1,0 +1,86 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Crear Rutina</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="openCreateActivities()">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Actividad
+          </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="rutinaForm"  (ngSubmit)="submit()" class="ion-padding">
+
+      <div>
+          <ion-item>
+              <ion-icon slot="start" size="large" name="people" color="primary"></ion-icon>
+              <ion-label position="stacked">Rutina</ion-label>
+              <ion-input formControlName="rutina"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" size="large" name="people" color="primary"></ion-icon>
+            <ion-label position="stacked">Descripción</ion-label>
+            <ion-textarea formControlName="descripcion"></ion-textarea>
+        </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="id-card-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Salón</ion-label>
+              <ion-select interface="action-sheet" class="custom-options" formControlName="salon">
+                  <ion-select-option value="Salón 1">Salón 1</ion-select-option>
+                  <ion-select-option value="Salón 2">Salón 2</ion-select-option>
+                  <ion-select-option value="Salón 3">Salón 3</ion-select-option>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="calendar-number-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Fecha</ion-label>
+              <ion-input formControlName="fecha" type="date"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="home-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Hora</ion-label>
+              <ion-input type="time" formControlName="hora"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="accessibility-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Entrenador</ion-label>
+              <ion-select interface="action-sheet" class="custom-options" formControlName="entrenador">
+                  <ion-select-option [value]="entrenador" *ngFor="let entrenador of entrenadores" >{{entrenador.nombre}}</ion-select-option>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" size="large" name="barbell-outline" color="primary"></ion-icon>
+            <ion-label position="stacked">Actividades</ion-label>
+            <ion-select interface="action-sheet" multiple class="custom-options" formControlName="actividades">
+                <ion-select-option [value]="actividad" *ngFor="let actividad of actividades" >{{actividad.actividad}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+      </div>
+
+  
+
+      <br>
+
+      <ion-button type="submit" expand="block" [disabled]="rutinaForm.invalid" >
+          <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+          Crear Rutina
+      </ion-button>
+
+  </form>
+
+
+
+</ion-content>

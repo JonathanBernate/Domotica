@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding-top ion-text-center">
+   
+
+     <!-- Genera el código QR -->
+  <div class="ion-text-center" *ngIf="datos_perfil" >
+    <qrcode [qrdata]="datos_perfil.uid" [width]="290" [errorCorrectionLevel]="'M'" ></qrcode> 
+  </div>
+
+  <!-- Lista los datos personales -->
+  <div class="card-body">
+    <div class="user-meta ion-text-center">
+
+      <ion-list>
+        <ion-list-header color="dark">
+          <ion-label>Datos Personales</ion-label>
+        </ion-list-header>
+      </ion-list>
+    </div> 
+
+    <ion-item>
+      <ion-icon slot="start" size="small" name="bookmarks-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input readonly>{{datos_perfil.nombre}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" size="small" name="bookmarks-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Tipo de Identificación</ion-label>
+      <ion-input readonly>{{datos_perfil.tipo_identificacion}}</ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon slot="start" size="small" name="finger-print-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Número de Identificación</ion-label>
+      <ion-input readonly >{{datos_perfil.numero_identificacion}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" size="small" name="calendar-number-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+      <ion-input readonly >{{datos_perfil.fecha_nacimiento}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" size="small" name="home-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Dirección</ion-label>
+      <ion-input readonly>{{datos_perfil.direccion}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" size="small" name="bandage-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Eps</ion-label>
+      <ion-input readonly>{{datos_perfil.eps}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" size="small" name="accessibility-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Género</ion-label>
+      <ion-input readonly >{{datos_perfil.genero}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" size="small" name="water-outline" color="primary"></ion-icon>
+      <ion-label position="stacked">Tipo de Sangre</ion-label>
+      <ion-input readonly>{{datos_perfil.tipo_sangre}}</ion-input>
+    </ion-item>
+  </div>
+  <div>
+
+  </div>
+
+  
+  <!-- Botón para imprimir el Código Qr -->
+  <div class="ion-text-center">
+  <ion-button class="naranja" (click)="print()" ><ion-icon name="print" slot="start" ></ion-icon>Imprimir Qr</ion-button>
+</div> 
+  </div>
+</ion-content>

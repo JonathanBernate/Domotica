@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "gym-app-back",
+    "gym-app": "gym-app-back"
+  },
+  "targets": {}
+}

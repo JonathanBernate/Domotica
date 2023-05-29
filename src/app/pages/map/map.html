@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sedes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div #mapCanvas class="map-canvas"></div> -->
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31811.674077627416!2d-74.11949913283745!3d4.689972365974766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgimnasio!5e0!3m2!1ses-419!2sco!4v1662911062851!5m2!1ses-419!2sco" width="600" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+  
+<agm-map [latitude]="latitude" [longitude]="longitude">
+  <agm-marker *ngFor="let place of places" [latitude]="place.latitude" [longitude]="place.longitude"></agm-marker>
+</agm-map>
+</ion-content>

@@ -1,0 +1,11 @@
+<section>
+
+<video #video [hidden]="!scanActive" width="100%"></video>
+
+<canvas #canvas hidden></canvas>
+
+<!-- <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)"> -->
+
+<button  class="btn-stop" (click)="stopVideo(null)">Finalizar</button>
+</section>
+ 

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <img src="../../../assets/images/lector_qr.png" alt="">
+  </div>
+  
+  <ion-button (click)="openScanner()" class="btn-qr-code">
+    <ion-icon slot="start" name="add"></ion-icon>
+    Leer código
+  </ion-button>
+
+  <ion-card-title style="margin: 20px 0 0 0;" class="ion-text-center">Asistencias Registradas</ion-card-title>
+  <ion-list>
+    <ion-item *ngFor="let asistencia of asistencias" >
+      <ion-label>
+        <strong>Usuario: </strong>{{asistencia.uid_usuario}} <br>
+        <strong>Fecha: </strong>{{asistencia.fecha}} <br>
+        <strong>Hora Ingreso: </strong>{{asistencia.hora_ingreso}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

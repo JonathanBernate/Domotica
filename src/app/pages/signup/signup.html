@@ -1,0 +1,149 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Registro de Usuarios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="signup-logo">
+    <img src="../../../assets/img/logo_1.png" alt="Ionic Logo">
+  </div>
+
+  <form [formGroup]="usuarioForm"  (ngSubmit)="submit()" class="ion-padding">
+
+      <ion-list class="ion-text-center">
+          <ion-list-header color="dark">
+              <ion-label>1. Datos Personales</ion-label>
+          </ion-list-header>
+      </ion-list>
+
+      <div>
+          <ion-item>
+              <ion-icon slot="start" size="large" name="people" color="primary"></ion-icon>
+              <ion-label position="stacked">Nombre Completo</ion-label>
+              <ion-input formControlName="nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="id-card-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Tipo de Identificación</ion-label>
+              <ion-select interface="action-sheet" class="custom-options" formControlName="tipo_identificacion">
+                  <ion-select-option value="Cédula Ciudadanía">Cédula Ciudadanía</ion-select-option>
+                  <ion-select-option value="Tarjeta Identidad">Tarjeta Identidad</ion-select-option>
+                  <ion-select-option value="Cédula Extranjería">Cédula Extranjería</ion-select-option>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="finger-print-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Número de Identificación</ion-label>
+              <ion-input formControlName="numero_identificacion" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="calendar-number-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+              <ion-input formControlName="fecha_nacimiento" type="date"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="home-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Dirección</ion-label>
+              <ion-input formControlName="direccion"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" size="large" name="call-outline" color="primary"></ion-icon>
+            <ion-label position="stacked">Teléfono</ion-label>
+            <ion-input formControlName="telefono"></ion-input>
+        </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="bandage-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Eps</ion-label>
+              <ion-input formControlName="eps" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="accessibility-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Genero</ion-label>
+              <ion-select interface="action-sheet" class="custom-options" formControlName="genero">
+                  <ion-select-option value="Masculino">Masculino</ion-select-option>
+                  <ion-select-option value="Femenino">Femenino</ion-select-option>
+                  <ion-select-option value="Otro">Otro</ion-select-option>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="water-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Tipo de Sangre</ion-label>
+              <ion-select interface="action-sheet" class="custom-options" formControlName="tipo_sangre">
+                  <ion-select-option value="A+">A+</ion-select-option>
+                  <ion-select-option value="B+">B+</ion-select-option>
+                  <ion-select-option value="O+">O+</ion-select-option>
+                  <ion-select-option value="AB+">AB+</ion-select-option>
+                  <ion-select-option value="A-">A-</ion-select-option>
+                  <ion-select-option value="B-">B-</ion-select-option>
+                  <ion-select-option value="O-">O-</ion-select-option>
+                  <ion-select-option value="AB-">AB-</ion-select-option>
+              </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" size="large" name="people-circle-outline" color="primary"></ion-icon>
+            <ion-label position="stacked">Rol</ion-label>
+            <ion-select interface="action-sheet" class="custom-options" formControlName="id_rol">
+                <ion-select-option value="1">Administrador</ion-select-option>
+                <ion-select-option value="2">Entrenador</ion-select-option>
+                <ion-select-option value="3">Afiliado</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+      </div>
+
+      <ion-list class="ion-text-center">
+          <ion-list-header color="dark">
+              <ion-label>2. Datos de la cuenta</ion-label>
+          </ion-list-header>
+      </ion-list>
+
+      <div *ngIf="!datos" >
+          <ion-item>
+              <ion-icon slot="start" size="large" name="mail-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input formControlName="email" type="email" autocomplete="off"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="lock-closed-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Contraseña</ion-label>
+              <ion-input formControlName="password" type="password" autocomplete="off"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password">
+              <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+                  <small class="error-message">{{error.message}}</small>
+              </ng-container>
+          </div>
+      </div>
+
+      <br>
+
+      <ion-button type="submit" expand="block" [disabled]="usuarioForm.invalid" *ngIf="!datos">
+          <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+          Crear usuario
+      </ion-button>
+      <ion-button type="submit" expand="block" [disabled]="usuarioForm.invalid" *ngIf="datos">
+          <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+          Actualizar usuario
+      </ion-button>
+
+  </form>
+
+
+
+</ion-content>

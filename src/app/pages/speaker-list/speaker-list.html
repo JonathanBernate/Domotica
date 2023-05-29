@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">Agendar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ng-container *ngFor="let rutina of rutinas">
+      <ion-col size="12" size-md="6" *ngIf="!rutina.agendado">
+        <ion-card class="speaker-card" >
+
+          <ion-card-content >
+            <ion-list lines="none">
+              <ion-item detail="false" (click)="rutinaSeleccionada(rutina)">
+                <ion-label>
+                  <p style="text-align:right;">{{rutina.fecha}}</p>
+                  <h2>{{rutina.entrenador.nombre}}</h2>
+                  <h4>{{rutina.rutina}} - {{rutina.hora}}</h4>
+                </ion-label>
+              </ion-item>
+
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ng-container>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col size="12" size-md="6" *ngFor="let speaker of speakers">
+        <ion-card class="speaker-card">
+          <ion-card-header>
+            <ion-item detail="false" lines="none" class="speaker-item" routerLink="/app/tabs/speakers/speaker-details/{{speaker.id}}">
+              <ion-avatar slot="start">
+                <img [src]="speaker.profilePic" [alt]="speaker.name + ' profile picture'">
+              </ion-avatar>
+              <ion-label>
+                <h2>{{speaker.name}}</h2>
+                <p>{{speaker.title}}</p>
+              </ion-label>
+            </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-list lines="none">
+              <ion-item *ngFor="let session of speaker.sessions" detail="false" routerLink="/app/tabs/speakers/session/{{session.id}}">
+                <ion-label>
+                  <h4>{{session.name}} - {{session.timeStart}}</h4>
+                </ion-label>
+              </ion-item>
+
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>

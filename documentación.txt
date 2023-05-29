@@ -1,0 +1,5 @@
+Instalación del Escáner de qr
+- npm i jsqr
+
+Instalación del generador de qr
+- npm i angularx-qrcode

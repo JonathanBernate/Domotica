@@ -1,0 +1,64 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Agregar actividad</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="actividadForm"  (ngSubmit)="submit()" class="ion-padding">
+
+      <ion-list class="ion-text-center">
+          <ion-list-header color="dark">
+              <ion-label>Actividades</ion-label>
+          </ion-list-header>
+      </ion-list>
+
+      <div>
+          <ion-item>
+              <ion-icon slot="start" size="large" name="people" color="primary"></ion-icon>
+              <ion-label position="stacked">Actividad</ion-label>
+              <ion-input formControlName="actividad"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" size="large" name="people" color="primary"></ion-icon>
+            <ion-label position="stacked">Descripción</ion-label>
+            <ion-textarea formControlName="descripcion"></ion-textarea>
+        </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" size="large" name="id-card-outline" color="primary"></ion-icon>
+            <ion-label position="stacked">Series</ion-label>
+            <ion-select interface="action-sheet" class="custom-options" formControlName="series">
+                <ion-select-option value="{{repeticion}}" *ngFor="let repeticion of [3,4,5,6,7,8,9,10,11,12,13,14,15]" >{{repeticion}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+          <ion-item>
+              <ion-icon slot="start" size="large" name="id-card-outline" color="primary"></ion-icon>
+              <ion-label position="stacked">Repeticiones</ion-label>
+              <ion-select interface="action-sheet" class="custom-options" formControlName="repeticiones">
+                  <ion-select-option value="{{repeticion}}" *ngFor="let repeticion of [3,4,5,6,7,8,9,10,11,12,13,14,15]" >{{repeticion}}</ion-select-option>
+              </ion-select>
+          </ion-item>
+
+      </div>
+
+  
+
+      <br>
+
+      <ion-button type="submit" expand="block" [disabled]="actividadForm.invalid" >
+          <ion-icon size="large" slot="icon-only" name="add"></ion-icon>
+          Crear Rutina
+      </ion-button>
+
+  </form>
+
+
+
+</ion-content>
