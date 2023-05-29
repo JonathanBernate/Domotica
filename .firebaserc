@@ -1,7 +1,5 @@
 {
   "projects": {
-    "default": "gym-app-back",
-    "gym-app": "gym-app-back"
-  },
-  "targets": {}
+    "default": "domotic-32db8"
+  }
 }
